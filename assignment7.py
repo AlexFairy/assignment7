@@ -21,7 +21,7 @@ reviews = [
 
 def update_list(final_review):
   global reviews
-  for i in reviews:
+  for i in final_review:
     i1 = i.replace("good", "GOOD")
     i2 = i1.replace("excellent", "EXCELLENT")
     i3 = i2.replace("bad", "BAD")
@@ -29,9 +29,9 @@ def update_list(final_review):
     i5 = i4.replace("average", "AVERAGE")
     print(i5)
   
-empty = [] #new data has to go through somewhere so it goes through here
+#empty = [] #new data has to go through somewhere so it goes through here
 
-update_list(empty)
+update_list(reviews)
 
 
 # So for the first string in the reviews list, we want it to say: 
@@ -72,7 +72,7 @@ for x in reviews:
   print(negative_count)
 
 
-#Task 3: Review Summary I'M STUCK. I'LL RESUBMIT THE ASSIGNMNET LATER
+#Task 3:
 
 #Implement a script that takes the first 30 characters of a review and appends "…" to create a summary. Ensure that the summary does not cut off in the middle of a word.
 
@@ -83,29 +83,32 @@ reviews = [
         "The performance of this product is excellent. Highly recommended!",
         "I had a bad experience with this product. It didn't meet my expectations.",
         "Poor quality product. Wouldn't recommend it to anyone.",
-        "The product was average. Nothing extraordinary about it."
-    ]
-for review in reviews:
-  sliced_reviews = review[0:30]
-  if review > len(30):
-    summary = review[30:]
+        "The product was average. Nothing extraordinary about it."]
 
-  print(total)
+sentence1 = reviews[0][0:33] + "..." + ","
+sentence2 = reviews[1][0:35] + "..." + ","
+sentence3 = reviews[2][0:33] + "..." + ","
+sentence4 = reviews[3][0:31] + "..." + ","
+sentence5 = reviews[4][0:33] + "..." + ","
+
+#print(reviews[0][0:33] + "..." + ",") #Version1
+print(sentence1)
+print(sentence2)
+print(sentence3)
+print(sentence4)
+print(sentence5)
 
 
-# 2. User Input Data Processor
-
-#Objective: The aim of this assignment is to process and format user input data.
-
-#Task 1: I'M STUCK. I'LL RESUBMIT THE ASSIGNMNET LATER
-
+#Task 1: 
 # Input Length Validator Write a script that asks for and checks the length of the user's first name and last name. 
 # Both should be at least 2 characters long. If not, print an error message.
 
-first_name = input("Please type a first name: ")
-last_name = input("Please type a last name: ")
+user_input = input("Type first name: ")
+first_name_length = len(user_input) 
+user_input2 = input("Type last name: ")
+last_name_length = len(user_input2)
 
-for x in range(int(first_name and last_name)) > 2:
-  print("Good job!")
+if first_name_length > 2 and last_name_length > 2:
+  print(f"First name count is {first_name_length} and last name count is {last_name_length}")
 else:
-  print("Error")
+  print("Error!")
